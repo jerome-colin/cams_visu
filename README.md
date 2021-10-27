@@ -11,3 +11,7 @@ For a given 'path' containing a collection of CAMS products, a given site locati
 <h1>cams_aot_plotter (notebook demo)</h1>
 
 A Jupyter notebook showing how to use pandas and altair libraries to plot timeseries of AOD.
+
+## Example of outputs:
+
+![Demo stacked plot](https://github.com/jerome-colin/cams_visu/blob/master/notebook_demo_stacked.png)
