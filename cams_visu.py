@@ -2,6 +2,10 @@
 
 """
 Basic CAMS product viewer for MAJA AOT/MR/HR
+
+TODO: make it simpler with xarray
+
+v0.0.0 : initial release, not tested on 5-species datasets
 """
 
 __author__ = "jerome.colin'at'cesbio.cnes.fr"
