@@ -6,6 +6,8 @@ CAMS data extractor
 Purpose : For a given 'path' containing a collection of CAMS products and a given site location (lat/lon in DD), reads
     all the AOT products and combine them to a single site-specific netCDF file.
 
+v0.1.1 : add some INFO messages
+
 v0.1.0 : bugfix for bug01. The timestamp of each product is tested. If any product in 'path' are dated
     before 2019-07-10 00:00:00 UTC, a dedicated 5 aerosol species file is created (suffixed '_5.nc'), while the later
     are concatenated in a file with suffix '_7.nc'. You may well get both depending on the range of your collection.
@@ -18,7 +20,7 @@ v0.0.0 : initial released, passed successfully on a full CAMS collection coverin
 
 __author__ = "jerome.colin'at'cesbio.cnes.fr"
 __license__ = "MIT"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 import argparse, sys, glob
 import xarray as xr
@@ -67,10 +69,15 @@ def extract(path, output, lat, lon):
     if len(ds_5) > 0:
         combined_5 = xr.concat(ds_5, dim='time')
         combined_5.to_netcdf(output[:-3]+"_5.nc", 'w')
+        print("INFO: output 5 aerosols dataset to %s" % output[:-3]+"_5.nc")
 
     if len(ds_7) > 0:
         combined_7 = xr.concat(ds_7, dim='time')
         combined_7.to_netcdf(output[:-3]+"_7.nc", 'w')
+        print("INFO: output 7 aerosols dataset to %s" % output[:-3]+"_7.nc")
+
+    print("Done...")
+
 
 def main():
     """
