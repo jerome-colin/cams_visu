@@ -16,5 +16,4 @@ Simple utility to plot timeseries of AOD.
 
 ## Example of outputs:
 
-![Demo stacked plot](https://github.com/jerome-colin/cams_visu/blob/master/notebook_demo_stacked.png)
-![Demo normalize plot](https://github.com/jerome-colin/cams_visu/blob/master/notebook_demo_normalize.png)
+![Demo stacked plot](https://github.com/jerome-colin/cams_visu/blob/master/Calcuta_7.png)
