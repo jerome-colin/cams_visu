@@ -16,7 +16,7 @@ For a given 'path' containing a collection of CAMS products, a given site locati
 
 ## cams_aot_timeline
 
-Simple utility to plot timeseries of AOD. Input files can be generated with cams_extract_aod. The script will automatically switch from 5-species to 7-species datasets according to netcdf content. If the netcdf filename is of the form <anystring>_<anystring>_<sitename>_<whatever>.nc, sitename will be picked-up from filename. Otherwise, use --sitename option.
+Simple utility to plot timeseries of AOD. Input files can be generated with cams_extract_aod. The script will automatically switch from 5-species to 7-species datasets according to netcdf file suffix (either `_5` ot `_7`). If the netcdf filename is of the form `<anystring>_<anystring>_<sitename>_<suffix>.nc`, sitename will be picked-up from filename. Otherwise, use --sitename option.
 
 ### Usage:
 
