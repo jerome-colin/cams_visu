@@ -10,9 +10,9 @@ For a given CAMS product in 'path' (MAJA specific ones, with EarthExplorer struc
 
 For a given 'path' containing a collection of CAMS products, a given site location (lat/lon in DD), reads all the AOT products and combine them to a site-specific netCDF file.
 
-# cams_aot_plotter (notebook demo)
+# cams_aot_timeline
 
-A Jupyter notebook showing how to use pandas and altair libraries to plot timeseries of AOD.
+Simple utility to plot timeseries of AOD.
 
 ## Example of outputs:
 
