@@ -89,7 +89,7 @@ def get_ratios(df_i, mode=5):
     return df
 
 
-def plot_aod(filename, sitename):
+def plot_aod(filename, sitename, outdir):
     """
     Plot routine
     :param filename:
@@ -124,7 +124,7 @@ def plot_aod(filename, sitename):
                                figsize=(16, 8),
                                color=colors).legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
 
-    pl.savefig("%s_%s.png" % (sitename, mode))
+    pl.savefig("%s/%s_%s.png" % (outdir, sitename, mode))
 
 
 def main():
@@ -136,9 +136,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="netCDF file produced by cams_extract_aod")
     parser.add_argument("--sitename", help="Name of the location (for plot title)", default="guess")
+    parser.add_argument("--outdir", help="Path to output PNG", default=".")
     args = parser.parse_args()
 
-    plot_aod(args.filename, args.sitename)
+    plot_aod(args.filename, args.sitename, args.outdir)
 
     sys.exit(0)
 
