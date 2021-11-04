@@ -97,6 +97,10 @@ def plot_aod(filename, sitename):
     :return: a PNG file
     """
     mode = get_mode(filename)
+
+    if sitename=="guess":
+        sitename = filename.split("/")[-1].split("_")[2]
+
     df_aod = get_df(filename)
     df_aod_ratio = get_ratios(df_aod, mode)
 
@@ -131,7 +135,7 @@ def main():
     # Argument parser
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="netCDF file produced by cams_extract_aod")
-    parser.add_argument("sitename", help="Name of the location (for plot title)")
+    parser.add_argument("--sitename", help="Name of the location (for plot title)", default="guess")
     args = parser.parse_args()
 
     plot_aod(args.filename, args.sitename)
